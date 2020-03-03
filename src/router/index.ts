@@ -1,14 +1,19 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/Home.vue';
-
+import buycar from './buycar'
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: '',
+    component: () => import(/* webpackChunkName: "basicLayout" */ '../layout/basicLayout.vue')
+  },
+  ...buycar,
+  {
+    path: '/form',
+    name: 'form',
+    component: () => import(/* webpackChunkName: "basicLayout" */ '../views/Formdepart.vue')
   },
   {
     path: '/about',
@@ -21,7 +26,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
   routes,
 });

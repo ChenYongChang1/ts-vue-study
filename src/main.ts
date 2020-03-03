@@ -6,12 +6,15 @@ import store from './store';
 Vue.config.productionTip = false;
 import 'ant-design-vue/dist/antd.css';
 
-import { Input, Select, Button } from 'ant-design-vue';
+import { Input, Select, Button, Layout, InputNumber } from 'ant-design-vue';
 
 
 Vue.use(Button);
 Vue.use(Input);
 Vue.use(Select);
+Vue.use(Layout);
+Vue.use(InputNumber);
+
 
 new Vue({
   router,
