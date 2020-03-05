@@ -60,8 +60,18 @@ export default class Buycarlist extends Vue {
   @buycarStore.State(state => state.product)
   product: any;
 
+  @buycarStore.Mutation('changeBuycarList')
+  changeBuycarList:any
+
   mounted(){
     console.log(this.product);
+    this.changeBuycarList( [
+    {
+      id: 1,
+      name: "小米10 pro change",
+      num: 1
+    }
+  ])
   }
 
   insertBuycarList(index: number) {

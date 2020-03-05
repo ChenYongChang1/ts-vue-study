@@ -21,7 +21,9 @@ const BuyCar = {
     ]
   },
   mutations: {
-    
+    changeBuycarList(state, list):void{
+      state.buycarlist = list
+    },
   },
   actions: {
   },
